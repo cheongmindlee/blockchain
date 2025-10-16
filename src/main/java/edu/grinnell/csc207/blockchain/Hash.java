@@ -10,7 +10,7 @@ public class Hash {
     private byte[] data;
     /**
      * Constructs a new Hash object that contains the given has(as an array of bites)
-     * @param data
+     * @param data a byte array
      */
     public Hash(byte[] data){
         this.data = data;
@@ -18,7 +18,7 @@ public class Hash {
 
     /**
      * Returns the hash contained in this object
-     * @return
+     * @return a byte array that holds the hash data
      */
     public byte[] getData(){
         return data;
@@ -26,7 +26,7 @@ public class Hash {
 
     /**
      * Returns true if this hash meets the criteria for validity, its first three indices contain zeroes
-     * @return
+     * @return a boolean, true if the hash is valid false if not
      */
     public boolean isValid(){
         if(data.length > 3){
@@ -53,6 +53,7 @@ public class Hash {
 
     /**
      * Returns true if this hash is structurally equal to the argument
+     * @param other an object type(needs to be a hash)
      */
     public boolean equals(Object other){
         if(other instanceof Hash){
