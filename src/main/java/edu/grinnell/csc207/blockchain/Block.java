@@ -61,35 +61,44 @@ public class Block {
      * @param nonce nonce value already provided
      */
     public Block(int num, int amount, Hash prevHash, long nonce) throws NoSuchAlgorithmException{
+        this.num = num;
+        this.amount = amount;
+        this.prevHash = prevHash;
+        this.nonce = nonce;
+
         MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(ByteBuffer.allocate(4).putInt(num).array());
-            md.update(ByteBuffer.allocate(4).putInt(amount).array());
-            md.update(prevHash.getData());
-            md.update(ByteBuffer.allocate(8).putLong(nonce).array());
+        md.update(ByteBuffer.allocate(4).putInt(num).array());
+        md.update(ByteBuffer.allocate(4).putInt(amount).array());
+       if(prevHash != null){
+                md.update(prevHash.getData());
+            }
+        md.update(ByteBuffer.allocate(8).putLong(nonce).array());
+        byte [] hash = md.digest();
+        this.hash = new Hash(hash);
     }
 
     /**
      * Returns number of this block
-     * @return
+     * @return num
      */
     public int getNum(){
-
+        return num;
     }
 
     /**
      * Returns the amount transferred that is recorded in this block
-     * @return
+     * @return amount
      */
     public int getAmount(){
-
-    }
+        return amount;
+    }   
 
     /**
      * Returns the nonce of this block
-     * @return
+     * @return nonce
      */
     public long getNonce(){
-
+        return nonce;
     }
 
     /**
@@ -97,7 +106,7 @@ public class Block {
      * @return
      */
     public Hash getPrevHash(){
-
+        return prevHash;
     }
 
     /**
@@ -105,13 +114,15 @@ public class Block {
      * @returns
      */
     public Hash getHash(){
-
+        return hash;
     }
 
     /**
      * returns a string representation of the block
      */
     public String toString(){
-
+        String retString;
+        retString = "Block " + num + " (Amount: " + amount + ", Nonce: " + nonce + ", prevHash: " + prevHash + ", hash: " + hash + ")";
+        return retString;
     }
 }
