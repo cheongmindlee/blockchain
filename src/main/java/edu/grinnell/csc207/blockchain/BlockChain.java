@@ -24,8 +24,8 @@ public class BlockChain {
     }
 
     //Holds the first block, and last block
-    Node first;
-    Node last;
+    public Node first;
+    public Node last;
     /**
      * Creates a BlockChain that has a single block with a specified amount
      * @param initial inital amount the blcok starts with
@@ -131,9 +131,17 @@ public class BlockChain {
             if(nextData[0] != 0 || nextData[1] != 0 || nextData[2] != 0){
                 return false;
             }
-            cur = cur.next;
 
-            
+            //Make sure the money does not go negative
+            amountA += cur.block.getAmount();
+            //After the initial sum of money in Anna's account start +/- transaction on bob's acc
+            if(cur.block.getNum() > 0){
+                amountB -= cur.block.getAmount();
+            }
+            if(amountA < 0 || amountB < 0){
+                return false;
+            }
+            cur = cur.next;     
         }
 
         //Reset cur
@@ -153,17 +161,6 @@ public class BlockChain {
             if (cur.next.block.getNum() - cur.block.getNum() != 1){
                 return false;
             }
-
-            //Make sure the money does not go negative
-            amountA += cur.block.getAmount();
-            //After the initial sum of money in Anna's account start +/- transaction on bob's acc
-            if(cur.block.getNum() > 0){
-                amountB -= cur.block.getAmount();
-            }
-            if(amountA < 0 || amountB < 0){
-                return false;
-            }
-            cur = cur.next;
         }
         return true;
     }
@@ -195,7 +192,7 @@ public class BlockChain {
         Node cur = first;
         while(cur != null){
             buf.append("Block " + cur.block.getNum());
-            buf.append("(Amount: " + cur.block.getAmount() + ", ");
+            buf.append(" (Amount: " + cur.block.getAmount() + ", ");
             buf.append("Nonce : " + cur.block.getNonce() + ", ");
             buf.append("prevHash: " + cur.block.getPrevHash() + ", ");
             buf.append("hash: " + cur.block.getHash() + ")\n");

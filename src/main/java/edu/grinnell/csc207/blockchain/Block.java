@@ -8,11 +8,13 @@ import java.security.NoSuchAlgorithmException;
  */
 public class Block {
 
+    //Instantiate Variables
     private int num;
     private int amount;
     private Hash prevHash;
     private Hash hash;
     private long nonce;
+    
     /**
      * Creates a new block from the specified parameters
      *  Performs mining operations to discover the nonce and hash for this block
@@ -103,7 +105,7 @@ public class Block {
 
     /**
      * Returns the hash of the previous block in the blockchain
-     * @return
+     * @return prevHash
      */
     public Hash getPrevHash(){
         return prevHash;
@@ -111,7 +113,7 @@ public class Block {
 
     /**
      * returns the hash of this block
-     * @returns
+     * @returns hash
      */
     public Hash getHash(){
         return hash;
