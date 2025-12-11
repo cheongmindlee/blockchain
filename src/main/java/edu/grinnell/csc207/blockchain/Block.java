@@ -121,7 +121,7 @@ public class Block {
     /**
      * returns the hash of this block
      * 
-     * @returns hash
+     * @return hash
      */
     public Hash getHash() {
         return hash;
@@ -129,11 +129,13 @@ public class Block {
 
     /**
      * returns a string representation of the block
+     * 
+     * @return string representation of the block
      */
     public String toString() {
         String retString;
-        retString = "Block " + num + " (Amount: " + amount + ", Nonce: " + nonce + ", prevHash: " + prevHash
-                + ", hash: " + hash + ")";
+        retString = "Block " + num + " (Amount: " + amount + ", Nonce: " + nonce +
+                ", prevHash: " + prevHash + ", hash: " + hash + ")";
         return retString;
     }
 }

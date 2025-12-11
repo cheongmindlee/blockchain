@@ -30,7 +30,7 @@ public class BlockChainDriver {
     }
 
     /**
-     * appends a ne wblock onto the end of the chain once you give it a valid nonce
+     * appends a new block onto the end of the chain once you give it a valid nonce
      * 
      * @param scan       a scanner to take in user input
      * @param blockChain The blockchain

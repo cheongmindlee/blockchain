@@ -1,7 +1,5 @@
 package edu.grinnell.csc207.blockchain;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 /**
@@ -50,6 +48,8 @@ public class Hash {
     /**
      * Returns the string representation of the hash as a string of hexadeimal
      * digits, 2 digits per byte
+     * 
+     * @return string representation of the hash
      */
     public String toString() {
         StringBuilder retString = new StringBuilder();
@@ -63,6 +63,7 @@ public class Hash {
      * Returns true if this hash is structurally equal to the argument
      * 
      * @param other an object type(needs to be a hash)
+     * @return boolen, true if it is equal false otherwise
      */
     public boolean equals(Object other) {
         if (other instanceof Hash) {

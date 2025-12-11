@@ -195,7 +195,9 @@ public class BlockChain {
     }
 
     /**
-     * Returns String representation of each block chain
+     * Returns the string representation of the block chain
+     * 
+     * @return string representation of the block chain
      */
     public String toString() {
         // Traverse through the blockchain and add to the string buffer each block
