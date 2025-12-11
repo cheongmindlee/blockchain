@@ -15,3 +15,5 @@ Authors: David Lee
 - I completed implementing the Hash class without much compiler errors
 - I completed implementing the BlockChain class
 - I finished implementing the BlockChainDriverClass, finsihed debugging it, and finished adding comments.
+
+- I fixed style issues regarding the checkstyle errors.
