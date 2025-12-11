@@ -134,8 +134,8 @@ public class Block {
      */
     public String toString() {
         String retString;
-        retString = "Block " + num + " (Amount: " + amount + ", Nonce: " + nonce +
-                ", prevHash: " + prevHash + ", hash: " + hash + ")";
+        retString = "Block " + num + " (Amount: " + amount + ", Nonce: " + nonce
+                + ", prevHash: " + prevHash + ", hash: " + hash + ")";
         return retString;
     }
 }
