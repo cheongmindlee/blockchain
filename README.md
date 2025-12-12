@@ -2,6 +2,8 @@
 
 Authors: David Lee
 
+## Changes made for Resubmission
+- I fixed checkstyle errors, added javadoc comments and fixed whitespaces and formatting errors.
 ## Resources
 
 - [StackOverflow ](https://stackoverflow.com/questions/10604125/how-can-i-clear-the-scanner-buffer-in-java)
